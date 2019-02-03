@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-login',
+  selector: 'home',
   template: `
-    <h1 class="home">Please login Here</h1>
+    <h1 class="home">Please login here</h1>
   `,
   styles: [`
-    .home { background-color: greenyellow;}
-    `]
+    .home { background-color: greenyellow; }
+  `]
 })
 export class LoginComponent implements OnInit {
 
@@ -15,5 +15,4 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
