@@ -4,8 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {ReactiveFormsModule} from "@angular/forms";
-import {UserService} from "./user.service";
-
+import {FruitService} from "./fruit.service";
 
 
 @NgModule({
@@ -16,7 +15,7 @@ import {UserService} from "./user.service";
     BrowserModule,
     ReactiveFormsModule
   ],
-  providers: [UserService],
+  providers: [FruitService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

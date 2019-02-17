@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import {User} from "./user";
-import {UserService} from "./user.service";
-import {Observable} from "rxjs/Observable";
+import {Fruit} from "./fruit";
+import {Observable} from "rxjs";
+import {FruitService} from "./fruit.service";
 
 @Component({
   selector: 'app-root',
@@ -10,11 +10,13 @@ import {Observable} from "rxjs/Observable";
     <div class="container">
       <div class="row">
         <div class="col">
-          <h2>Famous Composers</h2>
+          <h2>Fruits</h2>
           <ul>
-            <li *ngFor="let user of users | async">
-              {{ user.firstName }} {{ user.lastName }}
-            </li>
+            <thead>
+            <td *ngFor="let fruit of fruits | async">
+              {{ fruits.name }} {{ fruits.pricePerPound }}
+            </td>
+            </thead>
           </ul>
         </div>
       </div>  
@@ -24,12 +26,12 @@ import {Observable} from "rxjs/Observable";
 })
 export class AppComponent {
 
-  users: Observable<User[]>;
+  fruits: Observable<Fruit[]>;
   title = 'app';
 
-  constructor(private userService: UserService) {}
+  constructor(private fruitService: FruitService) {}
 
   ngOnInit() {
-    this.users = this.userService.getUsers();
+    this.fruits = this.fruitService.getFruits();
   }
 }
