@@ -1,0 +1,23 @@
+<mat-toolbar class="menu" role="header" color="primary">
+  <mat-toolbar-row>
+    <button mat-button class="toolbar__icon-button mat-button">
+      <mat-icon>web</mat-icon>
+      <span style="margin-left: 5px !important;">WEB 425</span>
+    </button>
+    <button mat-button class="mat-button">
+      About
+    </button>
+    <button mat-button class="mat-button">
+      Contact Us
+    </button>
+
+    <div fxFlex></div>
+
+    <div class="parent" fxLayout="row">
+      <div class="left" fxFlex></div>
+      <div class="right" fxFlex>
+        AppComponent received: {{ priceQuote?.stockSymbol }} {{ priceQuote?.lastPrice | currency: 'USD' }}
+        <app-price-quote (lastPrice)="priceQuoteHandler($event)"></app-price-quote>
+      </div>
+
+    </div>

@@ -1,21 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
 import { AppComponent } from './app.component';
-import {ReactiveFormsModule} from "@angular/forms";
-import {FruitService} from "./fruit.service";
+import {FlexLayoutModule} from "@angular/flex-layout";
+import { PriceQuoteComponent } from './price-quote/price-quote.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PriceQuoteComponent
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    FlexLayoutModule,
   ],
-  providers: [FruitService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
