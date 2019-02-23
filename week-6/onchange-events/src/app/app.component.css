@@ -1,0 +1,16 @@
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    color: white;
+}
+
+.wrapper {
+    padding: 70px 70px 0;
+    display: block;
+}
+.textParent { padding: 10px;}
+.left { background: red; padding: 10px; width: 200px;}
+.parent { background: rgba(43, 103, 194, 0.856); padding: 10px; width: 400px;}
