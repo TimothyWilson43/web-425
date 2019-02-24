@@ -1,0 +1,68 @@
+<mat-toolbar class="menu" role="header" color="primary">
+  <mat-toolbar-row>
+    <button mat-button class="toolbar__icon-button mat-button">
+      <mat-icon>web</mat-icon>
+      <span style="margin-left: 5px !important;">WEB 425</span>
+    </button>
+    <button mat-button class="mat-button">
+      About
+    </button>
+    <button mat-button class="mat-button">
+      Contact Us
+    </button>
+
+    <div fxFlex></div>
+
+    <!-- User Profile -->
+    <button class="toolbar_icon-button" [matMenuTriggerFor]="menu" mat-icon-button>
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>perm_contact_calendar</mat-icon>
+        <span>My Profile</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>settings</mat-icon>
+        <span>Settings</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="wrapper"></div>
+
+
+<div class="textParent" fxLayout>
+  <div class="left">
+    <h2>Side Navigation</h2>
+  </div>
+  <div class="form-example" fxFlex>
+    <mat-card>
+      <form class="form-example" #f="ngForm" (ngSubmit)="onSubmit(f.value); f.reset()">
+        <mat-form-field>
+          <input matInput placeholder="Username" ngModel name="username" type="text" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="SSN" ngModel name="ssn" type="text" />
+        </mat-form-field>
+
+        <div class="form-example" ngModelGroup="passwordsGroup">
+          <mat-form-field>
+            <input matInput placeholder="Password" name="password" ngModel type="password" />
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput placeholder="Confirm Password" name="pconfirm" ngModel type="password" />
+          </mat-form-field>
+        </div>
+
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+      </form>
+    </mat-card>
+  </div>

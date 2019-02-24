@@ -1,0 +1,28 @@
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    color: white;
+}
+
+.wrapper {
+    padding: 40px 70px 0;
+    display: block;
+}
+
+.left { background: #5e42b0; color: white; padding: 10px; width: 200px; height: 65vmax}
+.parent { background: rgba(43, 103, 194, 0.856); padding: 10px; width: 400px;}
+
+.form-example {
+    padding-top: 3em;
+    padding-left: 3em;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-example > * {
+    width: 55%;
+  }
+  
