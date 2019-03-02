@@ -1,0 +1,78 @@
+<mat-toolbar class="menu" role="header" color="primary">
+  <mat-toolbar-row>
+    <button mat-button class="toolbar__icon-button mat-button">
+      <mat-icon>home</mat-icon>
+      <span style="margin-left: 5px !important;">Bob's Computer Repair Shop</span>
+    </button>
+    <button mat-button class="mat-button">
+      About
+    </button>
+
+
+    <div fxFlex></div>
+
+    <!-- User Profile -->
+    <button class="toolbar_icon-button" [matMenuTriggerFor]="menu" mat-icon-button>
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>perm_contact_calendar</mat-icon>
+        <span>My Profile</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>settings</mat-icon>
+        <span>Settings</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="wrapper">
+
+  <div class="alternate-theme"></div>
+  <div class="textParent" fxLayout color="accent">
+    <div class="left">
+      <h3>For more information</h3>
+      <h2>1-800-CALLBOB</h2>
+    </div>
+    <div class="form-checklist" fxFlex>
+      <mat-card>
+        <form #f="ngForm" (ngSubmit)="onSubmit(f.value); f.reset()">
+          <h2>Services</h2>
+          <div class="mdc-form-field">
+
+            <div class="mdc-checkbox">
+              <ul class="game-list">
+                <li *ngFor="let s of services" class="services">
+                  <input (change)="calculateTotals()" type="checkbox" name="services" value="{{s.id}}" [(ngModel)]="s.selected" />
+                  <span class="service-text">{{s.name}}</span>
+                </li>
+              </ul>
+            </div>
+            <br />
+            <hr>
+
+            <h2>Standard Fees</h2>
+            <mat-form-field>
+              <input matInput name="part" placeholder="Total of Services" [(ngModel)]="totalParts" name="parts" type="text" />
+            </mat-form-field>
+            <br />
+            <mat-form-field>
+              <input matInput name="labor" placeholder="Hours of labor @ $50.00" [(ngModel)]="laborHours" name="labor"
+                type="text" />
+            </mat-form-field>
+
+          </div>
+
+          <button mat-raised-button color="warn" type="reset">Reset</button>&nbsp;
+          <button mat-raised-button color="primary" type="submit">Calculate</button>
+
+        </form>
+      </mat-card>
+    </div>
+  </div>

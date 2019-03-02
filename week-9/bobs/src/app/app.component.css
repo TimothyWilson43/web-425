@@ -1,0 +1,49 @@
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    color: white;
+}
+
+.wrapper {
+    padding: 40px 0 0;
+    display: block;
+    background-color: #797979;
+}
+
+.left { background: #797979; color: white; padding-top: 30px; padding-left: 10px; width: 200px; height: 50vmax}
+.parent { background: rgba(43, 103, 194, 0.856); padding: 10px; width: 400px;}
+
+.form-checklist {
+    padding-top: 3em;
+    margin-right: 10em;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .service-text {
+    margin: 10px;
+    
+  }
+  .form-example > * {
+    width: 55%;
+  }
+
+  .error {
+    color: red;
+  }
+
+  .hasError {
+    border: 1px solid red;
+  }
+
+  ul {
+    padding-left: 0;
+    list-style-type: none;
+  }
+  li{
+    margin: 10px 0;
+  }
+  
